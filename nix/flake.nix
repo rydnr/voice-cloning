@@ -56,7 +56,7 @@
       let
         org = "rydnr";
         repo = "voice-cloning";
-        version = "0.0.1";
+        version = "0.0.2";
         pname = "${org}-${repo}";
         pythonpackage = "rydnr.voicecloning";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
