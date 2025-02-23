@@ -75,7 +75,7 @@ class VoiceCloningRequestedCli(CliHandler, PrimaryPort):
         """
         parser.add_argument(
             "-a",
-            "--audio",
+            "--audio-file",
             required=True,
             help="The audio file with the voice to clone",
         )
@@ -97,4 +97,6 @@ class VoiceCloningRequestedCli(CliHandler, PrimaryPort):
         :param args: The CLI args.
         :type args: argparse.args
         """
-        await app.accept(VoiceCloningRequested(args.flake_ref, args.output_file))
+        await app.accept(
+            VoiceCloningRequested(args.audio_file, args.text_file, args.output_file)
+        )

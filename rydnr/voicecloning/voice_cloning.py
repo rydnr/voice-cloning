@@ -42,12 +42,13 @@ class VoiceCloning(EventListener):
         """
         super().__init__()
 
+    @classmethod
     @listen(VoiceCloningRequested)
-    def clone_voice(self, event: VoiceCloningRequested):
+    async def listen_VoiceCloningRequested(cls, event: VoiceCloningRequested):
         """
         Clones the voice.
         :param event: The event.
-        :type event: VoiceCloningRequested
+        :type event: rydnr.voicecloning.events.VoiceCloningRequested
         """
         print(
             f"Cloning voice from {event.audio_file} reading {event.text_file} to {event.output_file}"
